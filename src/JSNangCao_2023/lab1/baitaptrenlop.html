@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        const orderSet= new Set([
+            "bun bo",
+            "banh mi",
+            "pizza",
+            "bun bo",
+            "banh mi",
+            "pizza",
+        ]);
+        console.log(orderSet);
+        console.log(orderSet.size);
+        console.log(orderSet.has("pizza"));
+        console.log(orderSet.has("banh mi"));
+        console.log(orderSet.has("banh canh"));
+        orderSet.add("pho");
+        orderSet.add("banh canh");
+        orderSet.delete("banh mi");
+        console.log(orderSet);
+        for (const order of orderSet) {
+            console.log(order);
+        }
+
+        const gameEvents = new Map([
+            [17, '⚽️ GOAL'],
+            [36, '🔁 Substitution'],
+            [47, '⚽️ GOAL'],
+            [61, '🔁 Substitution'],
+            [64, '🔶 Yellow card'],
+            [69, '🔴 Red card'],
+            [70, '🔁 Substitution'],
+            [72, '🔁 Substitution'],
+            [76, '⚽️ GOAL'],
+            [80, '⚽️ GOAL'],
+            [92, '🔶 Yellow card'],
+        ]);
+
+        console.log(gameEvents);
+        console.log(gameEvents.values());
+        const time = [...gameEvents.keys()].pop();
+        console.log(time);
+        console.log(gameEvents.values());
+        gameEvents.set(45,"nam");
+        for(const[key,value] of gameEvents) {
+            console.log(`Answer ${key} : ${value}`);
+        }
+        console.log(gameEvents.get(80));
+        console.log(gameEvents.set(80,"na"));
+        let text = "";
+        gameEvents.forEach((key,value) => {
+            console.log(text = key + " = " + value)
+        })
+        console.log(gameEvents);
+        var event61 = [];
+        
+        for(const[key,value] of gameEvents){
+            
+            if(key >= 61){
+                event61.push(value);
+            }
+        }  
+        if(event61.length != 0){
+            console.log(...new Set(event61));
+        }else(
+            console.log("khong co su kien")
+        )
+        
+        
+
+
+
+
+
+    </script>
+</body>
+</html>
